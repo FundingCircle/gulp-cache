@@ -47,6 +47,7 @@ var defaultOptions = {
 };
 
 var cacheTask = function(task, opts) {
+
   // Check for required task option
   if (!task) {
     throw new PluginError('gulp-cache', 'Must pass a task to cache()');
@@ -64,6 +65,7 @@ var cacheTask = function(task, opts) {
   return new Transform({
     objectMode: true,
     transform: function(file, enc, cb) {
+
       if (file.isNull()) {
         cb(null, file);
         return;
